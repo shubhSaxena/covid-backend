@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_134000) do
     t.integer "total_deaths"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_country_stats_on_code"
+    t.index ["slug"], name: "index_country_stats_on_slug"
   end
 
 end

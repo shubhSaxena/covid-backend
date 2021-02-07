@@ -8,5 +8,8 @@ class CreateCountryStats < ActiveRecord::Migration[6.0]
       t.integer :total_deaths
       t.timestamps
     end
+
+    add_index :country_stats, :code
+    add_index :country_stats, :slug
   end
 end
