@@ -21,4 +21,4 @@ test:
 
 production:
   <<: *default
-  database: covid-data
+  url: <%= ENV['DATABASE_URL'] %>
