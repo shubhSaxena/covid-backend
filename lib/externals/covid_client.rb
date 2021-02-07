@@ -4,10 +4,10 @@ class CovidClient < RootClient
   end
 
   def countries_info
-    self.get('countries')
+    self.get('countries').parsed_response
   end
 
-  # def country_stats
-  #   self.get
-  # end
+  def country_stats(country_slug, date)
+    self.get("country/#{country_slug}?from=#{date-1}&to=#{date}")
+  end
 end

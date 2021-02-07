@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_134000) do
     t.string "code"
     t.integer "active_cases"
     t.integer "total_deaths"
+    t.boolean "data_updated"
+    t.datetime "data_updated_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_country_stats_on_code"

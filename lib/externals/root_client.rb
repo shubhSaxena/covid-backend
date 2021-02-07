@@ -12,7 +12,7 @@ class RootClient
   end
 
   def url_with_service(service)
-      "#{self.base_url}/#{service}"
+      URI.encode("#{base_url}/#{service}")
   end
 
   def get_opts(opts = {})
@@ -30,7 +30,7 @@ class RootClient
     full_url = self.url_with_service(service)
     options = self.get_opts(opts)
     response = HTTParty.send(action, full_url, options)
-    response.parsed_response
+    response
   end
 
   def get(service, opts = {})

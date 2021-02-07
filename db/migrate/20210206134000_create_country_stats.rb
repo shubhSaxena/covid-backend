@@ -6,6 +6,8 @@ class CreateCountryStats < ActiveRecord::Migration[6.0]
       t.string :code
       t.integer :active_cases
       t.integer :total_deaths
+      t.boolean :data_updated
+      t.datetime :data_updated_at
       t.timestamps
     end
 

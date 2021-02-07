@@ -14,7 +14,7 @@ class UpdateCountryInfo < ApplicationService
     countries_data = get_country_data
     sorted_data = countries_data.sort_by { |hsh| hsh["Slug"]}
     sorted_data.each do |hsh|
-      CountryStat.create({
+      CountryStat.create_or_find_by({
         name: hsh["Country"],
         slug: hsh["Slug"],
         code: hsh["ISO2"]
