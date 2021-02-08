@@ -1,8 +1,6 @@
 class BaseRequestHandler < ApplicationService
   attr_accessor :params, :country_code, :get_total
   def initialize(params)
-    puts "*"*80
-    puts "BaseRequestHandler -- #{params}"
     @params = params
     @country_code = params[:country_code]
     @get_total = params[:get_total]
