@@ -9,10 +9,14 @@
 class CountryStatController < ApplicationController
   protect_from_forgery with: :null_session
   def active_cases
+    puts "*"*80
+    puts "active_cases params --- #{params}"
     render json: ActiveCasesRequest.call(params)
   end
 
   def total_deaths
+    puts "*"*80
+    puts "total_deaths params --- #{params}"
     render json: TotalDeathsRequest.call(params)
   end
 end
